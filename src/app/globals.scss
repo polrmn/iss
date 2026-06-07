@@ -1,5 +1,5 @@
 :root {
-  --background: #ffffff;
+  --background: rgba(249, 252, 255, 0.3);
   --foreground: #171717;
   --red: #c41119;
   --blue: #002162;
@@ -8,8 +8,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    // --background: #0a0a0a;
+    // --foreground: #ededed;
   }
 }
 
@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   color: var(--foreground);
-  background: var(--background);
+  background: url("../assets/images/body_bg.webp") 0 0 / 100% auto repeat-y, var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,8 +53,8 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+// }
