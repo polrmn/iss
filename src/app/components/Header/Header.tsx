@@ -1,22 +1,19 @@
 import { mainContacts, socials } from "@/constants/contacts";
-import ArrowDownIcon from "../icons/ArrowDownIcon";
-import FacebookInRectIcon from "../icons/FacebookInRectIcon";
-import InstaInRectIcon from "../icons/InstaInRectIcon";
-import MailIcon from "../icons/MailIcon";
-import PhoneIcon from "../icons/PhoneIcon";
-import SearchIcon from "../icons/SearchIcon";
 import logo from '../../../assets/images/logo-s.png'
 import styles from "./Header.module.scss";
 import Image from "next/image";
 
 function HeaderContacts() {
     return (
-        <ul>
+        <ul className={styles.contacts}>
             {mainContacts.map((contact) => (
                 <li key={contact.label}>
                     <a href={contact.href} target="_blank" rel="noopener noreferrer">
                         {contact.icon ?? null}
-                        <span>{contact.value}</span>
+                        <div>
+                        <p>{contact.label}</p>
+                        <p>{contact.value}</p>
+                        </div>
                     </a>
                 </li>
             ))}
@@ -25,7 +22,7 @@ function HeaderContacts() {
 
 function HeaderSocials() {
     return (
-        <ul>
+        <ul className={styles.socials}>
             {socials.map((social) => (
                 <li key={social.label}>
                     <a href={social.href} target="_blank" rel="noopener noreferrer">
@@ -46,6 +43,18 @@ export default function Header() {
                         <HeaderContacts />
                         <HeaderSocials />
                     </div>
+                </div>
+                <div className={styles.bottom}>
+                    <nav className={styles.nav}>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Admissions</a></li>
+                            <li><a href="#">Academics</a></li>
+                            <li><a href="#">Student Life</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </header>

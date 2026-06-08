@@ -1,6 +1,51 @@
-.header {}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--background-header);
+    backdrop-filter: var(--blur-block);
+    padding: 20rem 0;
+
+    @supports (animation-timeline: scroll()) {
+        background-color: transparent;
+        backdrop-filter: blur(0rem);
+
+        animation-name: makeHeaderBackgroundVisible;
+        animation-timeline: scroll(root);
+        animation-range: 0 100px;
+        animation-fill-mode: forwards;
+    }
+}
 
 .container {
     @include container;
-    
+}
+
+.top {
+    @include flex(space-between, center);
+}
+
+.left {
+    width: 123rem;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.links,
+.contacts,
+.contacts a,
+.socials {
+    @include flex(flex-start, center);
+}
+
+@keyframes makeHeaderBackgroundVisible {
+    to {
+        background-color: var(--background-header);
+        backdrop-filter: var(--blur-block);
+    }
 }
