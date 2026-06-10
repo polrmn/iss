@@ -1,11 +1,16 @@
 :root {
   --background: rgba(249, 252, 255, 0.3);
   --background-header: rgba(249, 252, 255, 0.75);
-  --blur-block: backdrop-filter: blur(22rem);
   --foreground: #171717;
   --red: #c41119;
   --blue: #002162;
-
+  --white: #fff;
+  
+  --shadow-1: 0 4rem 16rem rgba(0, 0, 0, 0.16);
+  
+  --blur-block: backdrop-filter: blur(22rem);
+  
+  --tr-time: 0.4s;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -55,6 +60,28 @@ a {
 
 ul {
   list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+  color: inherit;
+
+  &::placeholder {
+    color: inherit;
+  }
+}
+
+svg {
+  color: inherit;
 }
 
 // @media (prefers-color-scheme: dark) {

@@ -2,6 +2,7 @@ import { mainContacts, socials } from "@/constants/contacts";
 import logo from '../../../assets/images/logo-s.png'
 import styles from "./Header.module.scss";
 import Image from "next/image";
+import SearchForm from "../SearchForm/SearchForm";
 
 function HeaderContacts() {
     return (
@@ -11,8 +12,8 @@ function HeaderContacts() {
                     <a href={contact.href} target="_blank" rel="noopener noreferrer">
                         {contact.icon ?? null}
                         <div>
-                        <p>{contact.label}</p>
-                        <p>{contact.value}</p>
+                            <p className={styles.label}>{contact.label}</p>
+                            <p className={styles.value}>{contact.value}</p>
                         </div>
                     </a>
                 </li>
@@ -40,6 +41,7 @@ export default function Header() {
                 <div className={styles.top}>
                     <div className={styles.left}><Image src={logo} alt="ISS Logo" width={123} /></div>
                     <div className={styles.links}>
+                        <SearchForm />
                         <HeaderContacts />
                         <HeaderSocials />
                     </div>

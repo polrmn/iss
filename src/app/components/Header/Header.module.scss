@@ -14,7 +14,7 @@
 
         animation-name: makeHeaderBackgroundVisible;
         animation-timeline: scroll(root);
-        animation-range: 0 100px;
+        animation-range: 0 200px;
         animation-fill-mode: forwards;
     }
 }
@@ -41,6 +41,62 @@
 .contacts a,
 .socials {
     @include flex(flex-start, center);
+}
+
+.contacts {
+    margin-left: 62rem;
+    gap: 32rem;
+
+    a {
+        gap: 10rem;
+        color: var(--blue);
+        transition: color var(--tr-time) linear;
+
+        &:hover {
+            color: var(--red);
+        }
+
+        svg {
+            width: 24rem;
+            height: 24rem;
+        }
+    }
+
+    .label {
+        font-weight: 400;
+        font-size: 5rem;
+        line-height: 6rem;
+        color: var(--red);
+    }
+
+    .value {
+        font-weight: 600;
+        font-size: 16rem;
+        line-height: 19rem;
+    }
+}
+
+.socials {
+    margin-left: 32rem;
+    gap: 8rem;
+
+    a {
+        display: flex;
+    }
+
+    svg {
+        width: 24rem;
+        height: auto;
+        transition: color var(--tr-time) linear;
+
+        &:hover {
+            color: var(--red);
+        }
+    }
+}
+
+.nav ul {
+    @include flex(space-between, center);
 }
 
 @keyframes makeHeaderBackgroundVisible {

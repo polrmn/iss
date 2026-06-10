@@ -1,0 +1,91 @@
+.searchForm {
+    @include flex(start, center);
+    width: 150rem;
+    padding-inline-start: 12rem;
+    color: var(--blue);
+    box-shadow: none;
+    border-radius: 100rem;
+    transition: box-shadow var(--tr-time) linear;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: transparent;
+        transition: background-color var(--tr-time) linear;
+    }
+
+    input {
+        width: 100%;
+        font-size: 16rem;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+
+    button {
+        width: 24rem;
+        height: 24rem;
+        flex-shrink: 0;
+        padding: 1rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        color: var(--blue);
+        transition: color var(--tr-time) linear;
+        pointer-events: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: var(--red);
+            transform: translateX(100%);
+            transition: transform var(--tr-time) linear;
+        }
+
+        div {
+            @include flex(center, center);
+            border-radius: 50%;
+            border: 1rem solid transparent;
+            height: 100%;
+            transition: border-color var(--tr-time) linear;
+        }
+
+        svg {
+            width: 16rem;
+            height: 16rem;
+        }
+    }
+
+    &:has(:focus-within) {
+        backdrop-filter: var(--blur-block);
+        box-shadow: var(--shadow-1);
+
+        &::before {
+            background-color: var(--background);
+        }
+
+        button::before {
+            transform: translateX(0);
+        }
+
+        button {
+            color: var(--white);
+            pointer-events: auto;
+        }
+
+        div {
+            border-color: var(--white);
+        }
+    }
+}
