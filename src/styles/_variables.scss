@@ -18,3 +18,10 @@ $max-width-mobile: 320rem;
     flex-direction: $direction;
     gap: $gap;
 }
+
+@mixin lg-text($lg) {
+    background: $lg;
+    background-clip: text;
+    text-emphasis-color: transparent;
+    -webkit-text-fill-color: transparent;
+}

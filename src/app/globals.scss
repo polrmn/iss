@@ -1,24 +1,35 @@
 :root {
   --background: rgba(249, 252, 255, 0.3);
   --background-header: rgba(249, 252, 255, 0.75);
+  --background-block: rgba(255, 255, 255, 0.25);
   --foreground: #171717;
   --red: #c41119;
   --blue: #002162;
+  --blue-2: #003b81;
+  --dark-grey: #3a3a3a;
   --white: #fff;
-  
+
+  --lg-red: linear-gradient(237.78deg, #d20008 8.86%, #9c0400 86.98%);
+  --lg-blue: linear-gradient(23.81deg, #002162 34.85%, #0038a6 101.5%);
+
   --shadow-1: 0 4rem 16rem rgba(0, 0, 0, 0.16);
-  
-  --blur-block: backdrop-filter: blur(22rem);
-  
+  --shadow-2: 0 3rem 16rem rgba(0, 0, 0, 0.24);;
+  --shadow-text: 0 2rem 4rem rgba(0, 0, 0, 0.16);
+
+  --blur-block: blur(22rem);
+  --blur-block-secondary: blur(10rem);
+
+  --radius-1: 8rem;
+
   --tr-time: 0.4s;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    // --background: #0a0a0a;
-    // --foreground: #ededed;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #0a0a0a;
+//     --foreground: #ededed;
+//   }
+// }
 
 html {
   height: 100%;

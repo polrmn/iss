@@ -10,7 +10,6 @@
 
     @supports (animation-timeline: scroll()) {
         background-color: transparent;
-        backdrop-filter: blur(0rem);
 
         animation-name: makeHeaderBackgroundVisible;
         animation-timeline: scroll(root);
@@ -102,6 +101,5 @@
 @keyframes makeHeaderBackgroundVisible {
     to {
         background-color: var(--background-header);
-        backdrop-filter: var(--blur-block);
     }
 }
