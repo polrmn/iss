@@ -1,7 +1,6 @@
 .hero {
-    padding-top: 120rem;
+    padding-block: 120rem 222rem;
     overflow: hidden;
-    height: 100vh;
 }
 
 .container {
@@ -86,10 +85,13 @@
 .sliderNavigation {
     display: flex;
     padding-block: 16rem;
+    margin-top: -66rem;
     background-color: var(--background-block);
     backdrop-filter: var(--blur-block-secondary);
     box-shadow: var(--shadow-1);
     border-radius: var(--radius-1);
+    position: relative;
+    z-index: 20;
 }
 
 .navigationTitleContainer {

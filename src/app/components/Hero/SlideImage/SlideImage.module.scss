@@ -63,24 +63,25 @@
         margin-right: 62rem;
     }
 }
+
 .courses1ImageContainer {
+    top: 122rem;
+    left: -134rem;
+    z-index: 10;
+    position: absolute;
 
     img {
-        width: 340rem;
-        margin-top: 12rem;
-        margin-right: 84rem;
+        width: 390rem;
+        margin: -120rem 0 0 179rem;
     }
 }
 
 .courses2ImageContainer {
-    position: absolute;
-    right: -60rem;
-    top: -32rem;
+    position: relative;
 
     img {
-        width: 276rem;
-        margin-top: 16rem;
-        margin-right: 62rem;
+        width: 475.9rem;
+        margin: -98rem -38rem 36rem 159rem;
     }
 }
 

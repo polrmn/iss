@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { motion } from 'motion/react'
 import mainImage from '../../../../assets/images/hero-slides/on-campus/main.webp'
 import styles from './SlideImage.module.scss'
+import OnCampusItems from './ChildItems/OnCampus'
 
 export default function OnCampus({ isActive }: { isActive: boolean }) {
   return (
@@ -24,6 +25,7 @@ export default function OnCampus({ isActive }: { isActive: boolean }) {
           className={styles.main}
         />
       </div>
+      <OnCampusItems isActive={isActive} />
     </motion.div>
   )
 }
