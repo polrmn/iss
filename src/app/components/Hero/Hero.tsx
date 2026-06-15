@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from './Hero.module.scss';
 import HeroSliderNavigation from './HeroSliderNavigation';
+import HeroSlides from './HeroSlides';
 
 export default function Hero() {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0)
@@ -10,7 +11,7 @@ export default function Hero() {
     return (
         <section className={styles.hero}>
             <div className={styles.container}>
-                {/* Hero slides */}
+                <HeroSlides activeSlideIndex={activeSlideIndex} />
                 <HeroSliderNavigation activeIndex={activeSlideIndex} setActiveIndex={(i) => setActiveSlideIndex(i)} />
             </div>
         </section>

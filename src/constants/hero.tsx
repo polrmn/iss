@@ -3,7 +3,6 @@ import CoursesIcon from "@/app/components/icons/hero/navigation/CoursesIcon";
 import DistanceIcon from "@/app/components/icons/hero/navigation/DistanceIcon";
 import OnCampusIcon from "@/app/components/icons/hero/navigation/OnCampusIcon";
 import OnlineIcon from "@/app/components/icons/hero/navigation/OnlineIcon";
-import img from '../assets/images/logo-s.png'
 
 export const heroSlidesNavigation = {
     title: <><p>Forms of</p><p>Education</p></>,
@@ -36,20 +35,34 @@ export const heroSlidesNavigation = {
     ]
 } as const satisfies HeroSliderNavigationType;
 
+export type HeroSlideValue = typeof heroSlidesNavigation.navigationItems[number]["value"];
+
 type HeroSlideFullType = {
-    value: typeof heroSlidesNavigation.navigationItems[number]["value"]
+    value: HeroSlideValue
 } & HeroSlideType
 
 export const heroSlides: HeroSlideFullType[] = [{
     value: 'on-campus',
     title: {
-        primary: '',
-        secondary: '',
-    },
-    images: [{
-        primary: '/',
-        secondary: '/'
-    }],
-    decorateItems: []
-
+        primary: 'on-campus',
+        secondary: 'education',
+    }
+}, {
+    value: 'online',
+    title: {
+        primary: 'online',
+        secondary: 'education',
+    }
+}, {
+    value: 'distance',
+    title: {
+        primary: 'distance',
+        secondary: 'education',
+    }
+}, {
+    value: 'courses',
+    title: {
+        primary: 'short',
+        secondary: 'courses',
+    }
 }]

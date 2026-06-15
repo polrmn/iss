@@ -1,6 +1,5 @@
 .hero {
     padding-top: 120rem;
-    padding-top: 320rem;
     overflow: hidden;
     height: 100vh;
 }
@@ -8,6 +7,79 @@
 .container {
     @include container;
 }
+
+// Hero Slides
+
+.slidesContainer {
+    position: relative;
+    display: flex;
+    padding-inline: 20rem;
+
+    &>div {
+        flex: 1;
+    }
+}
+
+.titleContainer {
+    @include flex(flex-start, flex-start, column);
+    z-index: 10;
+    font-family: "Times New Roman";
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--blue);
+    text-shadow: var(--shadow-text-2);
+    position: relative;
+
+    .title {
+        width: 100%;
+        margin-top: 52rem;
+
+        font-family: "Times New Roman";
+        font-weight: 700;
+        font-size: 76rem;
+        line-height: 84rem;
+        letter-spacing: 0.08em;
+
+
+        &:not(:first-child) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+        }
+
+        span {
+            display: block;
+        }
+
+        .primary {
+            color: rgba(234, 244, 255, 1);
+            text-shadow: 2rem 0 1rem var(--red), 2rem 1rem 1rem var(--red), 2rem -1rem 1rem var(--red), 0 2rem 1rem var(--red), 1rem 2rem 1rem var(--red), -1rem 2rem 1rem var(--red), -2rem 0 1rem var(--red), -2rem 1rem 1rem var(--red), -2rem -1rem 1rem var(--red), 1rem -2rem 1rem var(--red), -1rem -2rem 1rem var(--red), 0 -2rem 1rem var(--red), 0 4.44414rem 4.44414rem rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    .subTitle {
+        margin-bottom: 30rem;
+        font-size: 27rem;
+        line-height: 37rem;
+        letter-spacing: 0.09em;
+
+        span {
+            display: inline-block;
+            width: 18rem;
+            height: 20rem;
+            background: url("../../../assets//images/swiss-icon.svg");
+            background-size: contain;
+            background-position: center center;
+        }
+    }
+
+    .buttonsContainer {
+        @include flex(flex-start, center, row, 40rem)
+    }
+}
+
 
 // Hero Slider Navigation Bar
 

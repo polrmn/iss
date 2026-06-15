@@ -4,22 +4,28 @@
   --background-block: rgba(255, 255, 255, 0.25);
   --foreground: #171717;
   --red: #c41119;
+  --red-2: #d20008;
+  --red-3: #9c0400;
   --blue: #002162;
   --blue-2: #003b81;
+  --blue-3: #0038a6;
   --dark-grey: #3a3a3a;
   --white: #fff;
 
-  --lg-red: linear-gradient(237.78deg, #d20008 8.86%, #9c0400 86.98%);
-  --lg-blue: linear-gradient(23.81deg, #002162 34.85%, #0038a6 101.5%);
+  --lg-red: linear-gradient(237.78deg, var(--red-2) 8.86%, var(--red-3) 86.98%);
+  --lg-blue: linear-gradient(23.81deg, var(--blue) 34.85%, var(--blue-3) 101.5%);
 
   --shadow-1: 0 4rem 16rem rgba(0, 0, 0, 0.16);
-  --shadow-2: 0 3rem 16rem rgba(0, 0, 0, 0.24);;
+  --shadow-2: 0 3rem 16rem rgba(0, 0, 0, 0.24);
+  ;
   --shadow-text: 0 2rem 4rem rgba(0, 0, 0, 0.16);
+  --shadow-text-2: 0 4rem 18rem rgba(0, 0, 0, 0.16);
 
   --blur-block: blur(22rem);
   --blur-block-secondary: blur(10rem);
 
   --radius-1: 8rem;
+  --radius-2: 3rem;
 
   --tr-time: 0.4s;
 }
@@ -93,6 +99,11 @@ input {
 
 svg {
   color: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 // @media (prefers-color-scheme: dark) {

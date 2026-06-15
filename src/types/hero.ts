@@ -28,6 +28,6 @@ type HeroSlideImageType = {
 
 export type HeroSlideType = {
     title: HeroSlideTitleType;
-    images: HeroSlideImageType[];
-    decorateItems: ReactElement[];
+    // images: HeroSlideImageType[];
+    // decorateItems: ReactElement[];
 }

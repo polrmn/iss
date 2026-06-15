@@ -1,0 +1,98 @@
+.slideImageContainer {
+    position: relative;
+    height: 452rem;
+    @include flex(flex-end, flex-start)
+}
+
+.mainImageContainer {
+    position: relative;
+    z-index: 20;
+}
+
+.container {
+    position: relative;
+
+    &:not(:first-child) {
+        position: absolute;
+        opacity: 0;
+    }
+}
+
+.onCampusImageContainer {
+    img {
+        width: 389rem;
+        height: auto;
+        margin-top: 24rem;
+        margin-right: 82rem;
+    }
+}
+
+.onlineImageContainer {
+    img {
+        width: 352rem;
+        margin-top: -11rem;
+        margin-right: 102rem;
+    }
+
+    .shadow {
+        filter: blur(18.0038rem) hue-rotate(45deg);
+        top: 17rem;
+        left: 10rem;
+    }
+}
+
+.distance1ImageContainer {
+    left: calc(-100% - 345rem);
+    top: -70rem;
+
+    img {
+        width: 340rem;
+        margin-top: 12rem;
+        margin-right: 84rem;
+    }
+}
+
+.distance2ImageContainer {
+    position: absolute;
+    right: -60rem;
+    top: -32rem;
+
+    img {
+        width: 276rem;
+        margin-top: 16rem;
+        margin-right: 62rem;
+    }
+}
+.courses1ImageContainer {
+
+    img {
+        width: 340rem;
+        margin-top: 12rem;
+        margin-right: 84rem;
+    }
+}
+
+.courses2ImageContainer {
+    position: absolute;
+    right: -60rem;
+    top: -32rem;
+
+    img {
+        width: 276rem;
+        margin-top: 16rem;
+        margin-right: 62rem;
+    }
+}
+
+.main {
+    position: relative;
+    z-index: 10;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(17rem);
+    opacity: 0.3;
+}

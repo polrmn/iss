@@ -6,12 +6,14 @@ import InstaInRectIcon from "@/app/components/icons/InstaInRectIcon";
 import FacebookIcon from "@/app/components/icons/FacebookIcon";
 import InstaIcon from "@/app/components/icons/InstaIcon";
 
+export const waContactLink = "https://wa.me/41779460103"
+
 export const mainContacts: ContactType[] = [
     {
         icon: <PhoneIcon />,
         label: "Phone",
         value: "+41 77 946 01 03",
-        href: "https://wa.me/41779460103"
+        href: waContactLink
     },
     {
         icon: <MailIcon />,
