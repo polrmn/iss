@@ -6,8 +6,12 @@ import styles from './SlideImage.module.scss'
 
 export default function Distance({ isActive }: { isActive: boolean }) {
     return (
-    <motion.div className={styles.container} animate={{ opacity: isActive ? 1 : 0 }} style={{ pointerEvents: isActive ? 'auto' : 'none' }}>
-            <div className={`${styles.distance1ImageContainer} ${styles.mainImageContainer}`}>
+        <motion.div
+            className={styles.container}
+            style={{ pointerEvents: isActive ? 'auto' : 'none' }}
+            animate={{ opacity: isActive ? 1 : 0 }}
+            transition={{ type: "tween", ease: "linear", duration: 0.4 }}
+        >            <div className={`${styles.distance1ImageContainer} ${styles.mainImageContainer}`}>
                 <Image src={mainImage1}
                     alt='distance education shadow'
                     loading="lazy"

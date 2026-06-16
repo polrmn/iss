@@ -94,6 +94,10 @@
     }
 }
 
+.applyLink {
+    margin-left: 34rem;
+}
+
 .nav ul {
     @include flex(space-between, center);
 }

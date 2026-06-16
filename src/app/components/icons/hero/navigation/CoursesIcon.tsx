@@ -7,6 +7,7 @@ export default function CoursesIcon({ ...props }: React.SVGProps<SVGSVGElement>)
             width={58}
             height={48}
             fill="none"
+            viewBox="0 0 58 48"
             {...props}
         >
             <path

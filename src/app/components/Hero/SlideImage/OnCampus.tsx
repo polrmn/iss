@@ -8,8 +8,8 @@ export default function OnCampus({ isActive }: { isActive: boolean }) {
   return (
     <motion.div
       className={styles.container}
-      animate={{ opacity: isActive ? 1 : 0 }}
       style={{ pointerEvents: isActive ? 'auto' : 'none' }}
+      animate={{ opacity: isActive ? 1 : 0 }}
       transition={{ type: "tween", ease: "linear", duration: 0.4 }}
     >
       <div className={`${styles.onCampusImageContainer} ${styles.mainImageContainer}`}>

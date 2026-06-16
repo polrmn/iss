@@ -151,8 +151,8 @@
     }
 
     .navItemContainer {
+        @include flex(center, center, column);
         padding-block: 8rem 32rem;
-        display: block;
         cursor: pointer;
         text-align: center;
         color: var(--blue-2);
@@ -193,6 +193,7 @@
             text-transform: uppercase;
             letter-spacing: -0.4rem;
             color: transparent;
+            color: var(--blue);
             transition: color var(--tr-time) linear;
 
             @include lg-text(var(--lg-blue));

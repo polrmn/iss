@@ -3,6 +3,7 @@ import logo from '../../../assets/images/logo-s.png'
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import SearchForm from "../SearchForm/SearchForm";
+import PrimaryElement from "../PrimaryElement/PrimaryElement";
 
 function HeaderContacts() {
     return (
@@ -44,6 +45,7 @@ export default function Header() {
                         <SearchForm />
                         <HeaderContacts />
                         <HeaderSocials />
+                        <PrimaryElement element="link" href="#" text="Apply online" className={styles.applyLink}/>
                     </div>
                 </div>
                 <div className={styles.bottom}>

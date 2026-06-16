@@ -7,6 +7,8 @@ export default function DistanceIcon({ ...props }: React.SVGProps<SVGSVGElement>
             width={62}
             height={62}
             fill="none"
+            viewBox="0 0 62 62"
+
             {...props}
         >
             <path
