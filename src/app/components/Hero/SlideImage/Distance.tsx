@@ -3,6 +3,7 @@ import { motion } from 'motion/react'
 import mainImage1 from '../../../../assets/images/hero-slides/distance/main_1.webp'
 import mainImage2 from '../../../../assets/images/hero-slides/distance/main_2.webp'
 import styles from './SlideImage.module.scss'
+import DistanceItems from './ChildItems/Distance'
 
 export default function Distance({ isActive }: { isActive: boolean }) {
     return (
@@ -37,6 +38,7 @@ export default function Distance({ isActive }: { isActive: boolean }) {
                     className={styles.main}
                 />
             </div>
+            <DistanceItems isActive={isActive} />
         </motion.div>
     )
 }

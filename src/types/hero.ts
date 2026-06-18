@@ -8,8 +8,6 @@ export type HeroNavigationItemType = {
     href: string;
 }
 
-
-
 export type HeroSliderNavigationType = {
     title: string | React.ReactNode;
     subtitle: string | React.ReactNode;
@@ -21,13 +19,6 @@ type HeroSlideTitleType = {
     secondary: string;
 }
 
-type HeroSlideImageType = {
-    primary: `/${string}`;
-    secondary: `/${string}`;
-}
-
 export type HeroSlideType = {
     title: HeroSlideTitleType;
-    // images: HeroSlideImageType[];
-    // decorateItems: ReactElement[];
 }

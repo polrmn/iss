@@ -1,0 +1,62 @@
+.container {
+    position: relative;
+    font-weight: 700;
+    width: 100%;
+    font-family: "Inter";
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    h2 {
+        font-size: 36rem;
+        line-height: 45rem;
+        color: var(--blue);
+    }
+}
+
+.shadow {
+    position: absolute;
+    top: -16rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    color: rgba(0, 33, 98, 0.1);
+    font-size: 42rem;
+    line-height: 52rem;
+    width: auto;
+    max-width: 100vw;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &.left {
+        left: -29rem;
+        transform: none;
+    }
+}
+
+.line-bottom::after {
+    content: '';
+    display: block;
+    margin: 4rem auto 0;
+    background: linear-gradient(232.52deg, #ca0008 14.92%, #820400 88.14%);
+    height: 1.85rem;
+    width: 148rem;
+}
+
+.line-left {
+    text-align: left;
+    padding-left: 8rem;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1.85rem;
+        height: 42rem;
+        background: linear-gradient(237.78deg, #d20008 8.86%, #9c0400 86.98%);
+    }
+}

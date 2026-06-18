@@ -1,0 +1,61 @@
+.advantages {}
+
+.container {
+    @include container;
+    @include flex(center, center, column);
+}
+
+.atavantagesList {
+    margin: 38rem auto 0;
+    @include flex;
+
+    li {
+        padding: 0 40rem;
+        flex: 1;
+        position: relative;
+
+        p {
+            height: 48rem;
+            font-weight: 600;
+            font-size: 20rem;
+            line-height: 24rem;
+            text-align: center;
+            color: var(--dark-grey);
+        }
+
+        div {
+            width: 24rem;
+            height: 24rem;
+            margin: 36rem auto 0;
+            border: 2rem solid var(--blue);
+            border-radius: 50%;
+            background: radial-gradient(50% 50% at center center, var(--red), var(--red) 4.3rem, transparent 5.3rem, transparent);
+        }
+
+        &:nth-child(odd) div {
+            background: radial-gradient(50% 50% at center center, var(--blue), var(--blue) 4.3rem, transparent 5.3rem, transparent);
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 11rem;
+            width: calc(50% - 12rem);
+            height: 2rem;
+            background-color: var(--blue);
+        }
+
+        &::before {
+            right: auto;
+            left: 0;
+        }
+
+        &:first-child::before,
+        &:last-child::after {
+            content: none;
+        }
+    }
+}
