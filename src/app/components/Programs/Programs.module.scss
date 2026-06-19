@@ -1,0 +1,178 @@
+.programs {
+    margin-top: 190rem;
+}
+
+.container {
+    @include container;
+}
+
+.header {
+    display: flex;
+
+    &>div {
+        width: 42.2%;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    &>ul {
+        flex: 1;
+    }
+}
+
+.infoContainer {
+    padding-right: 58rem;
+    padding-bottom: 7rem;
+
+    .programsList {
+        margin-top: 18rem;
+        position: relative;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        .programItem {
+            grid-area: 1 / 1 / 2 / 2;
+            @include flex(space-between, flex-start, column);
+
+            &:not(:first-child) {
+                opacity: 0;
+            }
+
+            h3 {
+                font-weight: 700;
+                font-size: 20rem;
+                line-height: 24rem;
+                text-transform: uppercase;
+                color: var(--red);
+                border-bottom: 2rem solid var(--dark-grey);
+                margin-left: 14rem;
+                padding-bottom: 2rem;
+                display: inline-block;
+            }
+
+            .description {
+                font-weight: 400;
+                font-size: 16rem;
+                line-height: 19rem;
+                text-align: justify;
+                text-indent: 16rem;
+                color: var(--dark-grey);
+                margin: 20rem auto 36rem;
+            }
+        }
+    }
+
+    .stats {
+        @include flex(space-between);
+        padding-left: 20rem;
+        width: 100%;
+
+        li {
+            width: 200rem;
+            display: flex;
+        }
+
+        img {
+            width: 48.8rem;
+            height: 51rem;
+        }
+
+        .statValue {
+            padding-left: 8.5rem;
+            border-left: 1rem solid var(--red);
+            margin-left: 5rem;
+
+            p:first-child {
+                font-style: italic;
+                font-weight: 400;
+                font-size: 14rem;
+                line-height: 17rem;
+                color: var(--dark-grey);
+            }
+
+            p:last-child {
+                font-style: italic;
+                font-size: 43.4428rem;
+                line-height: 39rem;
+                letter-spacing: 0.01em;
+                color: var(--blue);
+                margin-bottom: -5rem;
+            }
+        }
+    }
+}
+
+.cardsContainer {
+    flex: 1;
+    @include flex(space-between, stretch, row, 24rem);
+    padding: 12rem 4rem 0 0;
+    overflow: hidden;
+
+    .cardItem {
+        height: 100%;
+        overflow: hidden;
+        box-shadow: var(--shadow-text);
+        border-radius: var(--radius-3);
+        position: relative;
+        transition: width var(--tr-time) linear;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(172deg, rgba(0, 0, 0, 0) -6.08%, rgba(0, 0, 0, 0.51) 41.39%);
+            border-radius: 5rem;
+        }
+    }
+
+    .titleText {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        font-weight: 700;
+        font-size: 18rem;
+        text-transform: uppercase;
+        color: var(--white);
+        white-space: nowrap;
+        position: relative;
+        transform-origin: 20rem bottom;
+        transition: transform var(--tr-time) linear;
+        will-change: transform;
+        text-align: start;
+
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+
+    .activeCard {
+        .titleText {
+            transform: rotate(0deg);
+            white-space: wrap;
+
+        }
+    }
+
+    .inactiveCard {
+        .titleText {
+            height: 44rem;
+            transform: translate(32rem, -20rem) rotate(-90deg);
+        }
+    }
+
+    .tabButton {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding: 10rem 16rem 16rem 10rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: flex-end;
+    }
+}
