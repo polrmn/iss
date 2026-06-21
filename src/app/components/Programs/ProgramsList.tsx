@@ -1,50 +1,136 @@
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import studentsIcon from '../../../assets/images/programs/students.svg'
-import nationalitiesIcon from '../../../assets/images/programs/nationalities.svg'
-import { programs } from '@/constants/programs';
-import styles from './Programs.module.scss';
+import { courses } from '@/constants/courses';
+import { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react';
+import Link from 'next/link';
+import ModeOfStudyIcon from '../icons/programs/ModeOfStudyIcon';
+import DurationIcon from '../icons/programs/DurationIcon';
+import DegreeLevel from '../icons/programs/DegreeLevel';
+import PrimaryElement from '../PrimaryElement/PrimaryElement';
+import styles from './Programs.module.scss'
 
-const iconsMap = {
-    students: studentsIcon,
-    nationalities: nationalitiesIcon
+function CourseItem({ course, index, activeIndex }: { course: typeof courses[0], index: number, activeIndex: number }) {
+    const [animationState, setAnimationState] = useState<'idle' | 'hovered' | 'leaving'>('idle');
+
+    const isItemStillActive = index === activeIndex;
+
+    const iconClass = `${styles.plusIcon} ${(animationState === 'hovered' || isItemStillActive) ? styles.active :
+        animationState === 'leaving' ? styles.leaving : ''
+        }`;
+
+    return (
+        <Link href='' className={styles.courseCard} onMouseEnter={() => setAnimationState('hovered')} onMouseLeave={() => setAnimationState('leaving')}>
+            <h3>{course.prefix} | {course.title}</h3>
+            <ul className={styles.courseInfo}>
+                <li>
+                    <div className={styles.iconContainer}>
+                        <ModeOfStudyIcon />
+                    </div>
+                    <p>{course.modeOfStudy}</p>
+                </li>
+                <li>
+                    <div className={styles.iconContainer}>
+                        <DurationIcon />
+                    </div>
+                    <p>{course.duration}</p>
+                </li>
+                <li>
+                    <div className={styles.iconContainer}>
+                        <DegreeLevel />
+                    </div>
+                    <p>{course.degreeLevel}</p>
+                </li>
+            </ul>
+            <div className={iconClass} />
+        </Link>
+    )
 }
 
 export default function ProgramsList({ activeSlug }: { activeSlug: string }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const filteredCourses = courses.filter(course => course.slug === activeSlug);
+
+    const firstRow = filteredCourses.slice(0, 4);
+    const secondRow = filteredCourses.slice(4, 8);
+
+    const handleButtonClick = () => {
+        setIsExpanded(!isExpanded);
+    };
+
+    const renderRow = (course: typeof courses[0], index: number) => (
+        <li
+            key={course.id}
+            className={activeIndex === index ? styles.active : ''}
+            onMouseEnter={() => setActiveIndex(index)}
+        >
+            <CourseItem course={course} index={index} activeIndex={activeIndex} />
+        </li>
+    )
+
+    useEffect(() => {
+        setIsExpanded(false);
+        setActiveIndex(0)
+    }, [activeSlug])
+
     return (
-        <ul className={styles.programsList}>
-            {programs.items.map(item => {
-                const isActive = item.slug === activeSlug;
-
-                return (
-                    <motion.li
-                        key={item.slug}
-                        className={styles.programItem}
-                        // Анімуємо тільки прозорість. Всі li рендеряться паралельно всередині Grid
-                        animate={{ opacity: isActive ? 1 : 0 }}
+        <div className={styles.programsListContainer}>
+            <motion.div
+                layout="size"
+                transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
+                className={styles.gridWrapper}
+            >
+                <AnimatePresence mode="popLayout">
+                    <motion.div
+                        key={activeSlug}
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 40 }}
                         transition={{ type: "tween", ease: "linear", duration: 0.4 }}
-                        style={{
-                            // Запобігає виділенню або клікам по невидимих слайдах
-                            pointerEvents: isActive ? 'auto' : 'none'
-                        }}
                     >
-                        <h3>{item.title}</h3>
-                        <p className={styles.description}>{item.description}</p>
-
-                        <ul className={styles.stats}>
-                            {item.stats.map(stat => (
-                                <li key={stat.slug}>
-                                    <Image src={iconsMap[stat.slug]} alt={stat.title} />
-                                    <div className={styles.statValue}>
-                                        <p>{stat.title}</p>
-                                        <p>{stat.value}</p>
-                                    </div>
-                                </li>
-                            ))}
+                        <ul className={styles.coursesGrid}>
+                            {firstRow.map(renderRow)}
                         </ul>
-                    </motion.li>
-                );
-            })}
-        </ul>
+
+                        <motion.div
+                            initial={{
+                                height: isExpanded ? "auto" : 0,
+                            }}
+                            animate={{
+                                height: isExpanded ? "auto" : 0,
+                                opacity: isExpanded ? 1 : 0
+                            }}
+                            transition={{ type: "tween", ease: "linear", duration: 0.4 }}
+                            className={styles.secondRowContainer}
+                            style={{
+                                overflow: "hidden",
+                                pointerEvents: isExpanded ? "auto" : "none",
+                                paddingInline: '20rem',
+                                marginInline: '-20rem'
+                            }}
+                        >
+                            <ul className={`${styles.coursesGrid} ${styles.secondRowGrid}`}>
+                                {secondRow.map((course, index) => renderRow(course, index + 4))}
+                            </ul>
+                        </motion.div>
+                    </motion.div>
+                </AnimatePresence>
+            </motion.div>
+
+            {isExpanded
+                ? <PrimaryElement
+                    element='link'
+                    text='All Programs'
+                    href=''
+                    className={styles.actionButton}
+                />
+                : <PrimaryElement
+                    element='button'
+                    text='Show more'
+                    onClick={handleButtonClick}
+                    className={styles.actionButton}
+                    arrowDirection='down'
+                />}
+        </div>
     );
 }
