@@ -1,0 +1,334 @@
+.apply {
+    margin-top: 196rem;
+
+    & * {
+        transition-duration: 600ms;
+
+    }
+}
+
+.container {
+    @include container;
+}
+
+.applyNavigation {
+
+    ul {
+        margin: 40rem auto 58rem;
+        @include flex();
+
+        li {
+            padding: 0 57rem;
+            border-left: 0.5rem solid var(--red);
+            border-right: 0.5rem solid var(--red);
+            position: relative;
+            cursor: pointer;
+
+            &:first-child {
+                border-left: none;
+            }
+
+            &:last-child {
+                border-right: none;
+            }
+
+            span {
+                font-weight: 500;
+                font-size: 16rem;
+                line-height: 20rem;
+                text-align: center;
+                color: var(--blue);
+
+                @include trans(color);
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                margin: 5rem auto 0;
+                height: 1rem;
+                background: var(--lg-blue);
+                width: 0;
+                // transition: width var(--tr-time) linear;
+                @include trans(width);
+            }
+
+            &.active {
+                span {
+                    color: var(--red);
+                }
+
+                &::after {
+                    width: 137rem;
+                }
+            }
+        }
+    }
+}
+
+.applySlider {
+    padding: 60rem 20rem 32rem;
+    margin: -60rem -23rem -32rem;
+    overflow: hidden;
+    display: flex;
+
+    .imagesList {
+        width: 353rem;
+        flex-shrink: 0;
+        border: 1rem solid red;
+    }
+
+    .infoList {
+        flex-grow: 1;
+        padding-left: 18rem;
+        margin-right: -18rem;
+
+
+        &>li+li {
+            margin-top: -307rem;
+        }
+    }
+
+    .stepsList {
+        --time-base: 200ms;
+        --time-step: 400ms;
+        @include flex(center, stretch);
+
+        li {
+            height: 307rem;
+            flex: 0 1 25%;
+            position: relative;
+            padding: 0 20rem;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(-20rem);
+
+            transition: all var(--time-base) linear;
+
+            &:last-child .stepBg::before {
+                content: none;
+            }
+        }
+    }
+
+    .topContainer {
+        .number {
+            position: relative;
+            top: 24rem;
+            right: 15rem;
+            z-index: 30;
+
+            p {
+                font-size: 41.5rem;
+                line-height: 43rem;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                @include lg-text(var(--lg-blue));
+            }
+
+            p+p {
+                font-size: 23.23rem;
+                line-height: 24rem;
+                margin-top: -8rem;
+            }
+        }
+
+        .stepBg {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: -14rem;
+            top: 13rem;
+            transform-origin: 0 100%;
+            transform: skewX(0);
+            overflow: hidden;
+            transition: all var(--time-base) linear;
+
+            &::before {
+                content: "";
+                display: block;
+                transform: skewX(0);
+                position: absolute;
+                top: 8rem;
+                left: -146rem;
+                width: 146rem;
+                height: 140rem;
+                background: url('../../../assets/images/apply/arrow.svg') 0 0 / 143rem 114rem no-repeat;
+            }
+
+            .circle {
+                width: 138rem;
+                height: 138rem;
+                transform: skewX(0);
+                position: absolute;
+                top: -2rem;
+                left: -138rem;
+                border-radius: 50%;
+                background: var(--lg-red);
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -34rem;
+                width: 20%;
+                height: 100%;
+                border-radius: 50%;
+                background: linear-gradient(192.61deg, rgba(255, 255, 255, 0) 0%, rgba(95, 95, 95, 0.138) 29.79%, rgba(72, 72, 72, 0.3) 46.03%, rgba(85, 84, 84, 0.138) 65.83%, rgba(255, 255, 255, 0) 92.25%);
+                filter: blur(9rem);
+            }
+        }
+
+        .icon {
+            position: absolute;
+            top: 80rem;
+            left: 70rem;
+
+            svg {
+                width: 42.6rem;
+                height: auto;
+            }
+        }
+    }
+
+    .bottomContainer {
+        margin-top: 108rem;
+        margin-inline-start: 4rem;
+
+        h3 {
+            font-weight: 700;
+            font-size: 16rem;
+            line-height: 19rem;
+            color: var(--blue);
+            text-transform: uppercase;
+            padding-left: 16rem;
+        }
+
+        p {
+            font-family: "Times";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14rem;
+            line-height: 16rem;
+            text-align: justify;
+            text-indent: 16rem;
+            margin-top: 9rem;
+            color: var(--dark-grey);
+        }
+    }
+}
+
+.infoList>li {
+    .stepsList li:nth-child(1) {
+        transition-delay: calc(var(--time-base) + 3*var(--time-step));
+
+        .stepBg,
+        .stepBg::before,
+        .stepBg .circle {
+            transition-delay: calc(3 * var(--time-step));
+        }
+    }
+
+    .stepsList li:nth-child(2) {
+        transition-delay: calc(var(--time-base) + 2 * var(--time-step));
+
+
+        .stepBg,
+        .stepBg::before,
+        .stepBg .circle {
+            transition-delay: calc(2 * var(--time-step));
+        }
+    }
+
+    .stepsList li:nth-child(3) {
+        transition-delay: calc(var(--time-base) + 1 * var(--time-step));
+
+
+        .stepBg,
+        .stepBg::before,
+        .stepBg .circle {
+            transition-delay: calc(1 * var(--time-step));
+        }
+    }
+
+    .stepsList li:nth-child(4) {
+        transition-delay: calc(var(--time-base) + 0 * var(--time-step));
+
+
+        .stepBg,
+        .stepBg::before,
+        .stepBg .circle {
+            transition-delay: calc(1 * var(--time-step));
+        }
+    }
+}
+
+.infoList li.active {
+    .stepsList li {
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+
+        &:nth-child(1) {
+            transition-delay: calc(4 * var(--time-step));
+
+            .stepBg,
+            .stepBg::before,
+            .stepBg .circle {
+                transition-delay: calc(var(--time-base) + 4 * var(--time-step));
+
+            }
+        }
+
+        &:nth-child(2) {
+            transition-delay: calc(5 * var(--time-step));
+
+            .stepBg,
+            .stepBg::before,
+            .stepBg .circle {
+                transition-delay: calc(var(--time-base) + 5 * var(--time-step));
+
+            }
+        }
+
+        &:nth-child(3) {
+            transition-delay: calc(6 * var(--time-step));
+
+
+            .stepBg,
+            .stepBg::before,
+            .stepBg .circle {
+                transition-delay: calc(var(--time-base) + 6 * var(--time-step));
+            }
+        }
+
+        &:nth-child(4) {
+            transition-delay: calc(7 * var(--time-step));
+
+
+            .stepBg,
+            .stepBg::before,
+            .stepBg .circle {
+                transition-delay: calc(var(--time-base) + 7 * var(--time-step));
+            }
+        }
+    }
+
+    .stepBg {
+        transform: skewX(-18deg);
+
+        &::before {
+            transform: translateX(159rem) skewX(18deg);
+        }
+
+        .circle {
+            transform: translateX(70rem) skewX(18deg);
+        }
+    }
+}

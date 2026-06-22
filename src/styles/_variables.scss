@@ -25,3 +25,7 @@ $max-width-mobile: 320rem;
     text-emphasis-color: transparent;
     -webkit-text-fill-color: transparent;
 }
+
+@mixin trans($property) {
+    transition: $property var(--tr-time) linear;
+}
