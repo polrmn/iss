@@ -13,33 +13,33 @@ export default function OnCampusImage() {
     <>
       <div className={styles.mainImage}>
         <Image src={main} alt='distance education' />
-        <div className={styles.part1}>
-          <Image src={part1} alt='easy admission process' />
-          <div>Easy admission process</div>
-        </div>
-        <div className={styles.part2}>
-          <Image src={part2} alt='idea' />
-        </div>
-        <div className={styles.part3}>
-          <Image src={part3} alt='tuition' />
-        </div>
-        <div className={styles.part4}>
-          <Image src={part4} alt='watching' />
-        </div>
-        <ul className={styles.part5}>
-          {Array.from({ length: 3 }, (_, index) => (
-            <li key={index}><Image src={part5} alt='question' /></li>
-          ))}
-        </ul>
-        <ul className={styles.part6}>
-          {Array.from({ length: 4 }, (_, index) => (
-            <li key={index}><Image src={part6} alt='claimation' /></li>
-          ))}
-        </ul>
-        <div className={styles.part7} />
-        <div className={styles.part8} />
-        <div className={styles.part9} />
       </div>
+      <div className={styles.part1}>
+        <Image src={part1} alt='easy admission process' />
+        <div>Easy admission process</div>
+      </div>
+      <div className={styles.part2}>
+        <Image src={part2} alt='idea' />
+      </div>
+      <div className={styles.part3}>
+        <Image src={part3} alt='tuition' />
+      </div>
+      <div className={styles.part4}>
+        <Image src={part4} alt='watching' />
+      </div>
+      <ul className={styles.part5}>
+        {Array.from({ length: 3 }, (_, index) => (
+          <li key={index}><Image src={part5} alt='question' /></li>
+        ))}
+      </ul>
+      <ul className={styles.part6}>
+        {Array.from({ length: 4 }, (_, index) => (
+          <li key={index}><Image src={part6} alt='claimation' /></li>
+        ))}
+      </ul>
+      <div className={styles.part7} />
+      <div className={styles.part8} />
+      <div className={styles.part9} />
     </>
   )
 }
