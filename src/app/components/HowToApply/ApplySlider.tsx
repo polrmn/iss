@@ -1,6 +1,17 @@
 import { NavigationSlug, StepType } from '@/types/howToApply'
 import { howToApply } from '@/constants/howToApply'
+import OnCampusImage from './Images/OnCampusImage'
+import CoursesImage from './Images/CoursesImage'
+import OnlineImage from './Images/OnlineImage'
+import DistanceImage from './Images/DistanceImage'
 import styles from './HowToApply.module.scss'
+
+const images = {
+    'on-campus': <OnCampusImage />,
+    'online': <OnlineImage />,
+    'distance': <DistanceImage />,
+    'courses': <CoursesImage />
+}
 
 function StepContent({ step, index }: { step: StepType, index: number }) {
     return (
@@ -28,7 +39,13 @@ function StepContent({ step, index }: { step: StepType, index: number }) {
 export default function ApplySlider({ activeSlug }: { activeSlug: NavigationSlug }) {
     return (
         <div className={styles.applySlider}>
-            <ul className={styles.imagesList}></ul>
+            <ul className={styles.imagesList}>
+                {howToApply.slides.map(slide => (
+                    <li key={slide.slug} className={activeSlug === slide.slug ? styles.active : ''}>
+                        {images[slide.slug]}
+                    </li>
+                ))}
+            </ul>
             <ul className={styles.infoList}>
                 {howToApply.slides.map(slide => (
                     <li key={slide.slug} className={activeSlug === slide.slug ? styles.active : ''}>

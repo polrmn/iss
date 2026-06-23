@@ -76,12 +76,6 @@
     overflow: hidden;
     display: flex;
 
-    .imagesList {
-        width: 353rem;
-        flex-shrink: 0;
-        border: 1rem solid red;
-    }
-
     .infoList {
         flex-grow: 1;
         padding-left: 18rem;
@@ -330,5 +324,80 @@
         .circle {
             transform: translateX(70rem) skewX(18deg);
         }
+    }
+}
+
+
+//Images
+
+.imagesList {
+    width: 353rem;
+    flex-shrink: 0;
+
+    &>li {
+        height: 328rem;
+        position: relative;
+
+        &.active {
+            z-index: 30;
+        }
+    }
+
+    &>li+li {
+        margin-top: -328rem;
+    }
+
+    .mainImage {
+        position: relative;
+        z-index: 20;
+        opacity: 0;
+        transition-delay: 700ms;
+        transition-duration: 600ms;
+        transition-property: opacity;
+
+        img {
+            width: 353rem;
+            height: auto;
+            position: relative;
+            z-index: 20;
+        }
+    }
+
+    &>li:nth-child(1) {}
+
+    &>li:nth-child(2) {
+
+        .mainImage {
+            img {
+                width: 296rem;
+                margin: -51rem 0 0 44rem;
+            }
+        }
+
+    }
+
+    &>li:nth-child(3) {
+        .mainImage {
+            img {
+                width: 315rem;
+                margin: -50rem 0 0 19rem;
+            }
+        }
+    }
+
+    &>li:nth-child(4) {
+        .mainImage {
+            img {
+                width: 280rem;
+                margin: -13rem 44rem 0 29rem;
+            }
+        }
+    }
+}
+
+.imagesList li.active {
+    .mainImage {
+        opacity: 1;
+        transition-delay: 1300ms;
     }
 }
