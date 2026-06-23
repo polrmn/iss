@@ -5,7 +5,7 @@ type ApplyNavigation = {
     slug: NavigationSlug
 }
 
-type StepType = {
+export type StepType = {
     title: string,
     description: string,
     icon: React.ReactElement
