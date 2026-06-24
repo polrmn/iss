@@ -1,4 +1,3 @@
-import { log } from 'console';
 import styles from './Heading.module.scss'
 
 export default function Heading(
@@ -16,7 +15,6 @@ export default function Heading(
         accentLinePlacement?: 'bottom' | 'left',
         className?: string;
     }) {
-    console.log(`line-${accentLinePlacement}`)
     return (
         <div className={`${styles.container} ${className} ${isAccentLine ? styles[`line-${accentLinePlacement}`] : ''} `}>
             <h2>{text}</h2>

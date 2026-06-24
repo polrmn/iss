@@ -24,14 +24,14 @@ export default function DistanceImage() {
       </div>
 
       <ul className={styles.part3}>
-        {Array.from({ length: 5 }, (_, index) => (<li key={index}><Image src={part3_1} alt='question' /></li>))}
+        {Array.from({ length: 5 }, (_, index) => (<li key={index}><Image src={index === 2 ? part3_2 : part3_1} alt='question' /></li>))}
       </ul>
       <ul className={styles.part4}>
         {Array.from({ length: 5 }, (_, index) => (<li key={index}><Image src={part3_2} alt='question' /></li>))}
       </ul>
 
       <ul className={styles.part5}>
-        {Array.from({ length: 5 }, (_, index) => (<li key={index}>{index === 0 && <Image src={part4} alt='question' />}</li>))}
+        {Array.from({ length: 4 }, (_, index) => (<li key={index}>{index === 0 && <Image src={part4} alt='question' />}</li>))}
       </ul>
     </>
   )

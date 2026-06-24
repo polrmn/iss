@@ -52,8 +52,7 @@ export default function OnlineImage() {
       </ul>
 
       <ul className={styles.part7}>
-        {Array.from({ length: 2 }, (_, index) => (<li key={index}><Image src={part6_1} alt='question' /></li>))}
-        {Array.from({ length: 2 }, (_, index) => (<li key={index}><Image src={part6_2} alt='question' /></li>))}
+        {Array.from({ length: 4 }, (_, index) => (<li key={index}><Image src={index % 3 === 0 ? part6_1 : part6_2} alt='question' /></li>))}
       </ul>
     </>
   )
