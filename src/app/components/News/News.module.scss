@@ -1,0 +1,119 @@
+.news {
+    margin-top: 196rem;
+}
+
+.container {
+    @include container;
+    @include flex(space-between, flex-start, row, 74rem);
+
+    &>* {
+        flex: 0 1 50%;
+    }
+}
+
+.headNews {
+    margin-top: 32rem;
+
+    .image {
+        display: flex;
+        position: relative;
+
+        img {
+            position: relative;
+            aspect-ratio: 211 / 116;
+            object-fit: cover;
+            border-radius: var(--radius-4);
+            z-index: 1;
+        }
+
+        .shadow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            filter: blur(12.5rem);
+            opacity: 0.36;
+        }
+    }
+
+}
+
+.headNewsContainer {
+    margin-top: auto;
+}
+
+.newsList {
+    align-self: stretch;
+    @include flex(flex-end, flex-start, column);
+
+    li {
+        width: 100%;
+    }
+
+    li:first-child {
+        border-top: 1rem solid var(--blue);
+    }
+}
+
+.newsItem {
+    padding: 54rem 24rem 40rem;
+    border-bottom: 1rem solid var(--blue);
+    display: flex;
+
+    .date {
+        margin: -22rem 52rem 0 0;
+
+        p {
+            font-family: "Georgia";
+
+            font-size: 69rem;
+            line-height: 72rem;
+            text-align: center;
+            @include lg-text(var(--lg-red));
+        }
+
+        p+p {
+            font-family: "Inter";
+            font-weight: 300;
+            font-size: 16rem;
+            line-height: 20rem;
+            text-transform: uppercase;
+        }
+    }
+
+    .content {
+        h4 {
+            font-weight: 500;
+            font-size: 16rem;
+            line-height: 19rem;
+            color: var(--blue);
+            min-height: 57rem;
+        }
+
+        .links {
+            margin-top: 14rem;
+        }
+
+        .readmore {
+            display: inline-block;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15rem;
+            line-height: 23rem;
+            @include lg-text(var(--lg-blue));
+        }
+
+        .allnews {
+            margin-left: 40rem;
+            text-transform: uppercase;
+            @include lg-text(var(--lg-red));
+
+            svg {
+                display: inline-block;
+                width: 12rem;
+                height: 13rem;
+                margin-right: 13rem;
+            }
+        }
+    }
+}
