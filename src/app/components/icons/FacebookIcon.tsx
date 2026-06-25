@@ -2,17 +2,15 @@ import React from 'react'
 
 export default function FacebookIcon({ ...props }: React.SVGProps<SVGSVGElement>) {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={18}
-            height={18}
-            fill="none"
-            {...props}
-        >
-            <path
-                fill="currentColor"
-                d="M10.387 18V9h2.484l.33-3.104h-2.814l.003-1.552c0-.81.077-1.243 1.24-1.243h1.553V0h-2.484C7.71 0 6.66 1.505 6.66 4.036v1.862H4.8v3.1h1.86V18h3.726Z"
-            />
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <g clipPath="url(#clip0_1438_1741)">
+                <path d="M11.1837 18.5V9.5H13.6677L13.9977 6.3956H11.1837L11.1873 4.844C11.1873 4.034 11.2641 3.6008 12.4269 3.6008H13.9797V0.5H11.4957C8.50766 0.5 7.45766 2.0048 7.45766 4.5356V6.398H5.59766V9.4988H7.45766V18.5H11.1837Z" fill="white"></path>
+            </g>
+            <defs>
+                <clipPath id="clip0_1438_1741">
+                    <rect width="18" height="18" fill="white" transform="translate(0.796875 0.5)"></rect>
+                </clipPath>
+            </defs>
         </svg>
     )
 }

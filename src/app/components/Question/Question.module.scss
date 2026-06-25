@@ -1,0 +1,336 @@
+.question {
+    margin-top: 232rem;
+}
+
+.container {
+    @include container;
+}
+
+.questionPoster {
+    display: flex;
+
+    &>div {
+        flex: 0 1 50%;
+    }
+}
+
+.titleContainer {
+    padding: 0 30rem 0 51rem;
+
+    h2 {
+        text-align: center;
+
+        div {
+            position: relative;
+        }
+    }
+
+    p {
+        font-weight: 700;
+        font-size: 40rem;
+        line-height: 62rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .shadow {
+        position: absolute;
+        opacity: 0.1;
+        top: -17rem;
+        left: calc(50% - 22rem);
+        width: 100%;
+        transform: translateX(-50%);
+        font-size: 48rem;
+    }
+
+    .questionText {
+        p {
+            color: var(--red);
+        }
+
+        .shadow {
+            color: var(--blue);
+        }
+    }
+
+    .answerText {
+        padding-bottom: 22rem;
+        background: linear-gradient(169.09deg, #00d1ff 4.74%, #0377bd 100.97%) 50% calc(100% - 13rem) / 347rem 2rem no-repeat, linear-gradient(169.09deg, #00d1ff 4.74%, #0377bd 100.97%) 50% 100% / 257rem 2rem no-repeat;
+
+        p {
+            color: var(--blue);
+        }
+    }
+}
+
+.imageContainer {
+    position: relative;
+    margin-top: -28rem;
+    margin-left: -46rem;
+
+    .mainImage {
+        img {
+            position: relative;
+            z-index: 20;
+            display: block;
+            margin: 0 auto;
+            width: 212rem;
+            height: auto;
+        }
+
+        .shadow {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            filter: blur(14.5rem);
+            opacity: 0.3;
+            z-index: 18;
+        }
+    }
+
+    &>*:not(.mainImage) {
+        position: absolute;
+    }
+
+    .part1,
+    .part2 {
+        display: flex;
+        padding: 10rem 11rem;
+        background: rgba(252, 253, 255, 0.56);
+        box-shadow: 0 4rem 16rem rgba(0, 0, 0, 0.16);
+        -webkit-backdrop-filter: blur(10rem);
+        backdrop-filter: blur(10rem);
+        border-radius: 11.9329rem;
+        bottom: 74rem;
+        left: 123rem;
+        z-index: 30;
+
+        img {
+            width: 32.75rem;
+            margin-right: 10rem;
+        }
+
+        p {
+            width: 50rem;
+            font-weight: 500;
+            font-size: 14rem;
+            line-height: 17rem;
+            color: var(---dark-grey);
+        }
+    }
+
+    .part2 {
+        bottom: 103rem;
+        left: auto;
+        right: 33rem;
+        border-radius: 15.18rem;
+        padding: 13rem 16rem 10rem;
+
+        img {
+            width: 40rem;
+            margin-right: 13rem;
+        }
+
+        p {
+            width: 112rem;
+            font-size: 18rem;
+            line-height: 22rem;
+        }
+    }
+
+    .part3,
+    .part4 {
+        width: 152rem;
+        height: 152rem;
+        z-index: 10;
+        border-radius: 23rem;
+        bottom: 86rem;
+        right: 229rem;
+        background-color: #AEF1F4;
+    }
+
+    .part4 {
+        bottom: 55rem;
+        right: 168rem;
+        z-index: 15;
+        background-color: #FFC888;
+    }
+
+    .part5 {
+        top: 28rem;
+        left: 129rem;
+        z-index: 30;
+
+        li {
+            transform: translateY(0);
+            position: relative;
+            filter: drop-shadow(-27.8116rem 15.0182rem 5.15407rem rgba(0, 0, 0, 0.07));
+
+            img {
+                width: 51rem;
+                height: 79rem;
+            }
+
+            .checkIcon {
+                opacity: 0;
+                transform: translateY(40rem);
+                pointer-events: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: none;
+            }
+        }
+
+        li+li {
+            top: -9rem;
+            left: 46rem;
+
+            img {
+                width: 39rem;
+                height: 55rem;
+            }
+        }
+
+        li+li+li {
+            top: -121rem;
+            left: 85rem;
+
+            img {
+                width: 39rem;
+                height: 43rem;
+            }
+        }
+    }
+
+    .part6 {
+        top: 13rem;
+        right: 109rem;
+        z-index: 30;
+
+        li {
+            position: relative;
+            filter: drop-shadow(-27.8116rem 15.0182rem 5.15407rem rgba(0, 0, 0, 0.07));
+
+            img {
+                width: 51rem;
+                height: 79rem;
+            }
+        }
+
+        li+li {
+            top: -9rem;
+            left: -30rem;
+
+            img {
+                width: 39rem;
+                height: 55rem;
+            }
+        }
+
+        li+li+li {
+            top: -111rem;
+            left: -74rem;
+
+            img {
+                width: 39rem;
+                height: 45rem;
+            }
+        }
+    }
+}
+
+.questionForm {
+    background: rgba(252, 253, 255, 0.56);
+    box-shadow: var(--shadow-1);
+    backdrop-filter: var(--blur-block-secondary);
+    border-radius: var(--radius-1);
+    padding: 27rem 40rem;
+    margin-top: -47rem;
+    position: relative;
+    z-index: 40;
+
+    .form {
+        @include flex(space-between, flex-end, row, 40rem)
+    }
+
+    .fieldsContainer {
+        flex-grow: 1;
+        @include flex(flex-start, center, row, 40rem)
+    }
+
+    .inputWrapper {
+        @include flex(flex-start, flex-start, column);
+        flex: 1;
+    }
+
+    .label {
+        padding-inline-start: 14rem;
+        font-weight: 500;
+        font-size: 14rem;
+        line-height: 21rem;
+        @include lg-text(var(--lg-red));
+    }
+
+    .fieldWrapper {
+        border: 1rem solid var(--grey);
+        border-radius: 4rem;
+        width: 100%;
+        position: relative;
+
+        input {
+            width: 100%;
+            font-weight: 400;
+            font-size: 14rem;
+            line-height: 38rem;
+            color: var(--dark);
+            padding: 0 13rem;
+            max-width: 321rem;
+
+            &::placeholder {
+                opacity: 0.5;
+            }
+        }
+
+        .errorMessage {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            text-align: right;
+            width: 100%;
+            font-size: 8rem;
+            line-height: 10rem;
+            color: var(--red);
+            padding-inline-end: 4rem;
+        }
+    }
+
+    .submitBtn {
+        width: 56rem;
+        height: 56rem;
+        border-radius: 4rem;
+        font-size: 0;
+        cursor: pointer;
+        background: url("../../../assets/images/question/paper-plane.svg") 50% 50% / 22rem 22rem no-repeat, linear-gradient(237.78deg, #d20008 2.2%, #9c0400 21%, var(--blue) 75%, var(--blue) 100%) 100% 0 / 400% 400% no-repeat;
+
+        @include trans(background-position);
+
+        &:hover {
+            background-position: 50% 50%, 0 100%;
+        }
+    }
+}
+
+.questionButtons {
+    margin: 40rem 190rem 0;
+    @include flex(space-between, center);
+
+    & > div {
+        @include flex(center, center, row, 34rem);
+    }
+
+    .download {
+        width: 230rem;
+    }
+}

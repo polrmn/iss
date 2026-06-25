@@ -17,7 +17,7 @@ export default function NewsItem({ newsItem }: { newsItem: PostType }) {
                     <Link href={newsItem.slug} className={styles.readmore}>Read More</Link>
                     <Link href='/news' className={styles.allnews}>
                         <ExternalLinkIcon />
-                        All News
+                        <span>All News</span>
                     </Link>
                 </div>
             </div>

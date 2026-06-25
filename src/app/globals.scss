@@ -10,7 +10,9 @@
   --blue-2: #003b81;
   --blue-3: #0038a6;
   --dark-grey: #3a3a3a;
+  --grey: #7b7b7b;
   --white: #fff;
+  --dark: #000;
 
   --lg-red: linear-gradient(237.78deg, var(--red-2) 8.86%, var(--red-3) 86.98%);
   --lg-blue: linear-gradient(23.81deg, var(--blue) 34.85%, var(--blue-3) 101.5%);
@@ -60,6 +62,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  font-family: "Inter";
   font-size: 16rem;
   line-height: normal;
   color: var(--blue);

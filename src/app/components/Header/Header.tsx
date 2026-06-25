@@ -4,6 +4,7 @@ import styles from "./Header.module.scss";
 import Image from "next/image";
 import SearchForm from "../SearchForm/SearchForm";
 import PrimaryElement from "../PrimaryElement/PrimaryElement";
+import Link from "next/link";
 
 function HeaderContacts() {
     return (
@@ -40,12 +41,16 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <div className={styles.top}>
-                    <div className={styles.left}><Image src={logo} alt="ISS Logo" width={123} /></div>
+                    <div className={styles.left}>
+                        <Link href="/">
+                            <Image src={logo} alt="ISS Logo" width={123} />
+                        </Link>
+                    </div>
                     <div className={styles.links}>
                         <SearchForm />
                         <HeaderContacts />
                         <HeaderSocials />
-                        <PrimaryElement element="link" href="#" text="Apply online" className={styles.applyLink}/>
+                        <PrimaryElement element="link" href="#" text="Apply online" className={styles.applyLink} />
                     </div>
                 </div>
                 <div className={styles.bottom}>
@@ -61,6 +66,6 @@ export default function Header() {
                     </nav>
                 </div>
             </div>
-        </header>
+        </header >
     )
 }

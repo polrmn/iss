@@ -8,6 +8,8 @@ import InstaIcon from "@/app/components/icons/InstaIcon";
 
 export const waContactLink = "https://wa.me/41779460103"
 
+export const siteName = 'International Swiss School'
+
 export const mainContacts: ContactType[] = [
     {
         icon: <PhoneIcon />,
@@ -43,11 +45,7 @@ export const expandedContacts: ContactType[] = [
         label: "Email",
         value: "admission@i-ss.ch",
         href: "mailto:admission@i-ss.ch"
-    },
-    ...maps.map((map) => ({
-        label: map.label,
-        value: map.value,
-    }))
+    }
 ]
 
 export const socials: SocialType[] = [

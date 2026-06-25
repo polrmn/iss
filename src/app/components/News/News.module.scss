@@ -91,19 +91,43 @@
 
         .links {
             margin-top: 14rem;
+
+            a {
+                line-height: 23rem;
+                font-weight: 300;
+                font-size: 15rem;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: block;
+                    width: 0;
+                    height: 1rem;
+                    @include trans(width);
+                }
+
+                &:hover::after {
+                    width: 100%;
+                }
+            }
         }
 
         .readmore {
             display: inline-block;
             font-family: "Inter";
-            font-style: normal;
-            font-weight: 300;
-            font-size: 15rem;
-            line-height: 23rem;
+
             @include lg-text(var(--lg-blue));
+
+            &::after {
+                background: var(--lg-blue);
+            }
         }
 
         .allnews {
+            display: inline-block;
             margin-left: 40rem;
             text-transform: uppercase;
             @include lg-text(var(--lg-red));
@@ -113,6 +137,10 @@
                 width: 12rem;
                 height: 13rem;
                 margin-right: 13rem;
+            }
+
+            &::after {
+                background: var(--lg-red);
             }
         }
     }

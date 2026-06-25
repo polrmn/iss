@@ -3,6 +3,7 @@ import Advantages from './components/Advantages/Advantages';
 import Programs from './components/Programs/Programs';
 import HowToApply from './components/HowToApply/HowToApply';
 import News from './components/News/News';
+import Question from './components/Question/Question';
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       <Advantages />
       <Programs />
       <HowToApply />
-      <News/>
+      <News />
+      <Question />
     </main>
   );
 }
