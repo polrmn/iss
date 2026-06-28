@@ -326,11 +326,77 @@
     margin: 40rem 190rem 0;
     @include flex(space-between, center);
 
-    & > div {
+    &>div {
         @include flex(center, center, row, 34rem);
     }
 
     .download {
         width: 230rem;
+    }
+}
+
+// Animations
+
+.container {
+
+    &:has(input[id="name"]:focus) li[id="question-form-react-name"]:first-child img:first-child,
+    &:has(input[id="phone"]:focus) li[id="question-form-react-phone"]:nth-child(2) img:first-child,
+    &:has(input[id="email"]:focus) li[id="question-form-react-email"]:nth-child(3) img:first-child {
+        animation: question-focus-image-rotating 800ms linear infinite;
+    }
+
+    &:has(input[id="name"].inputSuccess:not(:focus)) li[id="question-form-react-name"],
+    &:has(input[id="phone"].inputSuccess:not(:focus)) li[id="question-form-react-phone"],
+    &:has(input[id="email"].inputSuccess:not(:focus)) li[id="question-form-react-email"] {
+        img:first-child {
+            animation: question-image-fade-out 400ms linear forwards;
+        }
+
+        img:last-child {
+            animation: question-image-fade-in 400ms linear 400ms 1 normal both;
+        }
+    }
+}
+
+
+@keyframes question-focus-image-rotating {
+    0% {
+        transform: translateY(0) rotateY(0);
+    }
+
+    50% {
+        transform: translateY(-20rem) rotateY(180deg);
+    }
+
+    100% {
+        transform: translateY(0rem) rotateY(360deg);
+    }
+}
+
+@keyframes question-image-fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(40rem);
+        pointer-events: none;
+    }
+}
+
+@keyframes question-image-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(40rem);
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
     }
 }

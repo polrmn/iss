@@ -1,11 +1,11 @@
 import Image from 'next/image'
+import { question } from '@/constants/question'
 import main from '../../../assets/images/question/main.webp'
 import part1 from '../../../assets/images/question/application.svg'
 import part2 from '../../../assets/images/question/hotel.svg'
 import part3 from '../../../assets/images/question/question-blue.svg'
 import part4 from '../../../assets/images/question/check.svg'
 import part5 from '../../../assets/images/question/question-red.svg'
-import { question } from '@/constants/question'
 import styles from './Question.module.scss'
 
 export default function QuestionImage() {
@@ -32,7 +32,7 @@ export default function QuestionImage() {
 
             <ul className={styles.part5}>
                 {question.form.map(field => (
-                    <li key={field.id}>
+                    <li key={field.id} id={`question-form-react-${field.id}`}>
                         <Image src={part3} alt='question' />
                         <Image src={part4} alt='check' className={styles.checkIcon} />
                     </li>
