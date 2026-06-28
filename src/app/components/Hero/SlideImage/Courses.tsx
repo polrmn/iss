@@ -3,6 +3,7 @@ import { motion } from 'motion/react'
 import mainImage1 from '../../../../assets/images/hero-slides/courses/main_1.webp'
 import mainImage2 from '../../../../assets/images/hero-slides/courses/main_2.webp'
 import styles from './SlideImage.module.scss'
+import CoursesItems from './ChildItems/Courses'
 
 export default function Courses({ isActive }: { isActive: boolean }) {
     return (
@@ -38,6 +39,7 @@ export default function Courses({ isActive }: { isActive: boolean }) {
                     className={styles.main}
                 />
             </div>
+            <CoursesItems isActive={isActive} />
         </motion.div>
     )
 }
