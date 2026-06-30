@@ -1,109 +1,322 @@
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background: var(--background-header);
-    backdrop-filter: var(--blur-block);
-    padding: 20rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: var(--background-header);
+  backdrop-filter: var(--blur-block);
+  padding: 20rem 0;
 
-    @supports (animation-timeline: scroll()) {
-        background-color: transparent;
+  @supports (animation-timeline: scroll()) {
+    background-color: transparent;
 
-        animation-name: makeHeaderBackgroundVisible;
-        animation-timeline: scroll(root);
-        animation-range: 0 200px;
-        animation-fill-mode: forwards;
-    }
+    animation-name: makeHeaderBackgroundVisible;
+    animation-timeline: scroll(root);
+    animation-range: 0 200px;
+    animation-fill-mode: forwards;
+  }
 }
 
 .container {
-    @include container;
+  @include container;
 }
 
 .top {
-    @include flex(space-between, center);
+  @include flex(space-between, center);
 }
 
 .left {
-    width: 123rem;
+  width: 123rem;
 
-    img {
-        width: 100%;
-        height: auto;
-    }
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .links,
 .contacts,
 .contacts a,
 .socials {
-    @include flex(flex-start, center);
+  @include flex(flex-start, center);
 }
 
 .contacts {
-    margin-left: 62rem;
-    gap: 32rem;
+  margin-left: 62rem;
+  gap: 32rem;
 
-    a {
-        gap: 10rem;
-        color: var(--blue);
-        transition: color var(--tr-time) linear;
+  .divider {
+    display: none;
+  }
 
-        &:hover {
-            color: var(--red);
-        }
+  a {
+    gap: 10rem;
+    color: var(--blue);
+    transition: color var(--tr-time) linear;
 
-        svg {
-            width: 24rem;
-            height: 24rem;
-        }
-    }
-
-    .label {
-        font-weight: 400;
-        font-size: 5rem;
-        line-height: 6rem;
-        color: var(--red);
-    }
-
-    .value {
-        font-weight: 600;
-        font-size: 16rem;
-        line-height: 19rem;
-    }
-}
-
-.socials {
-    margin-left: 32rem;
-    gap: 8rem;
-
-    a {
-        display: flex;
+    &:hover {
+      color: var(--red);
     }
 
     svg {
-        width: 24rem;
-        height: auto;
-        transition: color var(--tr-time) linear;
-
-        &:hover {
-            color: var(--red);
-        }
+      width: 24rem;
+      height: 24rem;
     }
+  }
+
+  .label {
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 6rem;
+    color: var(--red);
+  }
+
+  .value {
+    font-weight: 600;
+    font-size: 16rem;
+    line-height: 19rem;
+  }
+}
+
+.socials {
+  margin-left: 32rem;
+  gap: 8rem;
+
+  a {
+    display: flex;
+  }
+
+  svg {
+    width: 24rem;
+    height: auto;
+    transition: color var(--tr-time) linear;
+
+    &:hover {
+      color: var(--red);
+    }
+  }
 }
 
 .applyLink {
-    margin-left: 34rem;
+  margin-left: 34rem;
+}
+
+.mobileMiddle {
+  display: none;
 }
 
 .nav ul {
-    @include flex(space-between, center);
+  @include flex(space-between, center);
 }
 
 @keyframes makeHeaderBackgroundVisible {
-    to {
-        background-color: var(--background-header);
+  to {
+    background-color: var(--background-header);
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 0;
+    box-shadow: 0 0 10.9091rem rgba(0, 0, 0, 0.15);
+  }
+
+  .left {
+    display: none;
+  }
+
+  .links {
+    width: 100%;
+
+    form {
+      display: none;
     }
+  }
+
+  .socials {
+    display: none;
+  }
+
+  a.applyLink {
+    display: none;
+  }
+
+  .contacts {
+    @include flex(space-evenly, center);
+    margin-inline: -20rem;
+    padding-block: 4rem;
+    background: rgba(249, 253, 255, 0.85);
+    box-shadow: 0 0 12rem rgb(0 0 0 / 15%);
+    width: calc(100% + 40rem);
+
+    .divider {
+      display: block;
+      width: 1rem;
+      align-self: stretch;
+      width: 0.4rem;
+      background-color: var(--blue);
+      opacity: 0.5;
+    }
+
+    a {
+      gap: 5rem;
+      color: var(--blue);
+      transition: color var(--tr-time) linear;
+
+      &:hover {
+        color: var(--red);
+      }
+
+      svg {
+        width: 10rem;
+        height: 10rem;
+      }
+    }
+
+    div {
+      display: flex;
+    }
+
+    .label {
+      font-size: 9.6rem;
+      line-height: 12rem;
+      font-weight: 500;
+    }
+
+    .value {
+      margin-left: 3rem;
+      font-size: 9.6rem;
+      line-height: 12rem;
+      font-weight: 500;
+    }
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .mobileMiddle {
+    @include flex(space-between);
+    margin-inline: -2rem;
+    padding-block: 4rem;
+
+    & > div {
+      display: flex;
+      gap: 22rem;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      width: 80rem;
+      display: flex;
+    }
+
+    .middleLeft,
+    .middleRight {
+      padding-block: 3rem;
+      align-self: stretch;
+
+      button,
+      a {
+        color: var(--blue);
+        width: 38rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 0 1 50%;
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 0.4rem;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: -11rem;
+          background-color: rgba(0, 33, 98, 0.5);
+        }
+
+        &::after {
+          content: "";
+          width: 0.4rem;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: -11rem;
+          background-color: rgba(0, 33, 98, 0.5);
+        }
+
+        svg {
+          width: 24rem;
+          height: 24rem;
+        }
+
+        span {
+          font-weight: 500;
+          font-size: 6.11725rem;
+          line-height: 7rem;
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    .middleLeft {
+      & > button,
+      a {
+        &::before {
+          content: none;
+        }
+      }
+    }
+    .middleRight {
+      & > button,
+      a {
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+    .menuBtn {
+      background: none;
+      outline: none;
+
+      line,
+      circle {
+        transform-origin: 50% 50%;
+        transform: none;
+        @include trans(all);
+      }
+
+      &.menuOpen {
+        .redLine {
+          transform: translate(2.5rem, 2.5rem) rotate(-45deg);
+        }
+
+        .blueLine {
+          transform: translate(0rem, -0.5rem) rotate(45deg);
+        }
+
+        .hideLine {
+          opacity: 0;
+        }
+
+        .redCircle {
+          transform: translate(-1.5rem, -0.5rem);
+        }
+      }
+    }
+
+    a.applyLink {
+      margin: 0;
+
+      svg {
+        width: 35.4rem;
+        height: 25rem;
+        margin-bottom: -2rem;
+      }
+    }
+  }
 }

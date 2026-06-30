@@ -20,8 +20,8 @@ export const mainContacts: ContactType[] = [
     {
         icon: <MailIcon />,
         label: "Email",
-        value: "info@i-ss.ch",
-        href: "mailto:info@i-ss.ch"
+        value: "admission@i-ss.ch",
+        href: "mailto:admission@i-ss.ch"
     }
 ];
 
@@ -43,8 +43,8 @@ export const expandedContacts: ContactType[] = [
     {
         icon: <MailIcon />,
         label: "Email",
-        value: "admission@i-ss.ch",
-        href: "mailto:admission@i-ss.ch"
+        value: "info@i-ss.ch",
+        href: "mailto:info@i-ss.ch"
     }
 ]
 
