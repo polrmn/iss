@@ -1,50 +1,82 @@
 .link {
-    @include flex(center, center, row, 10rem);
-    display: inline-flex;
+  @include flex(center, center, row, 10rem);
+  display: inline-flex;
+
+  span {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 14rem;
+    line-height: 20rem;
+    color: var(--dark-grey);
+    text-transform: none;
+
+    transition: color var(--tr-time) linear;
+  }
+
+  &:hover {
+    .iconContainer {
+      background-position: 0 100%;
+    }
 
     span {
-        font-family: "Inter";
-        font-weight: 500;
-        font-size: 14rem;
-        line-height: 20rem;
-        color: var(--dark-grey);
-        text-transform: none;
-
-        transition: color var(--tr-time) linear;
+      color: var(--red);
     }
-
-    &:hover {
-        .iconContainer {
-            background-position: 0 100%;
-        }
-
-        span {
-            color: var(--red);
-        }
-    }
+  }
 }
 
 .iconContainer {
-    height: 44rem;
-    width: 44rem;
-    background: linear-gradient(212.74deg, #00dc09 2.1%, #007e05 22.5%, var(--red) 75%, var(--red) 100%) 100% 0 / 400% 400% no-repeat;
-    box-shadow: var(--shadow-text-2);
-    padding: 2.2rem;
-    border-radius: 50%;
+  height: 44rem;
+  width: 44rem;
+  background: linear-gradient(
+      212.74deg,
+      #00dc09 2.1%,
+      #007e05 22.5%,
+      var(--red) 75%,
+      var(--red) 100%
+    )
+    100% 0 / 400% 400% no-repeat;
+  box-shadow: var(--shadow-text-2);
+  padding: 2.2rem;
+  border-radius: 50%;
 
-    transition: background-position var(--tr-time) linear;
+  transition: background-position var(--tr-time) linear;
 }
 
 .inner {
-    @include flex;
+  @include flex;
 
-    height: 100%;
-    border: 1rem solid var(--white);
-    border-radius: 50%;
-    color: var(--white);
+  height: 100%;
+  border: 1rem solid var(--white);
+  border-radius: 50%;
+  color: var(--white);
+
+  svg {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .link {
+    span {
+      font-size: 12rem;
+      line-height: 16rem;
+      opacity: 0;
+    }
+  }
+
+  .iconContainer {
+    width: 24rem;
+    height: 24rem;
+    padding: 1.2rem;
+
+    .inner {
+      border-width: 0.5rem;
+    }
 
     svg {
-        width: 20rem;
-        height: 20rem;
+      width: 11rem;
+      height: 11rem;
     }
+  }
 }

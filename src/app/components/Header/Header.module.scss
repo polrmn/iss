@@ -4,17 +4,28 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  background: var(--background-header);
-  backdrop-filter: var(--blur-block);
   padding: 20rem 0;
 
-  @supports (animation-timeline: scroll()) {
-    background-color: transparent;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: var(--background-header);
+    backdrop-filter: var(--blur-block);
 
-    animation-name: makeHeaderBackgroundVisible;
-    animation-timeline: scroll(root);
-    animation-range: 0 200px;
-    animation-fill-mode: forwards;
+    @supports (animation-timeline: scroll()) {
+      background-color: transparent;
+
+      animation-name: makeHeaderBackgroundVisible;
+      animation-timeline: scroll(root);
+      animation-range: 0 200px;
+      animation-fill-mode: forwards;
+    }
   }
 }
 
@@ -120,6 +131,12 @@
   .header {
     padding: 0;
     box-shadow: 0 0 10.9091rem rgba(0, 0, 0, 0.15);
+
+    &::before {
+      animation: none;
+      background: rgba(249, 253, 255, 0.85);
+      backdrop-filter: blur(13.0909rem);
+    }
   }
 
   .left {
@@ -193,7 +210,7 @@
   }
 
   .nav {
-    display: none;
+    // display: none;
   }
 
   .mobileMiddle {
@@ -318,5 +335,68 @@
         margin-bottom: -2rem;
       }
     }
+  }
+
+  .bottom {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    overflow: hidden;
+    max-width: 68%;
+    width: 68%;
+    padding: 0 26rem;
+    height: 0;
+    box-shadow: 0 11rem 10.9091rem rgba(0, 0, 0, 0.15);
+    transition: none;
+    background: transparent;
+    pointer-events: none;
+
+    @include trans(all);
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      background: rgba(249, 253, 255, 0.85);
+      backdrop-filter: blur(13.0909rem);
+    }
+
+    &::after {
+      height: 5rem;
+      top: auto;
+      bottom: 100%;
+      box-shadow: 0 0 10.9091rem rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .header:has(button.menuOpen) {
+    .bottom {
+      height: calc(100vh - 73rem);
+      padding: 9rem 26rem;
+      pointer-events: all;
+    }
+
+    .menuBackdrop {
+      display: block;
+    }
+  }
+
+  .menuBackdrop {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    z-index: -1;
+    display: none;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

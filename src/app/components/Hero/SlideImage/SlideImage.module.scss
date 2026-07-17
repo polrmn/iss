@@ -1,99 +1,253 @@
 .slideImageContainer {
-    position: relative;
-    height: 452rem;
-    @include flex(flex-end, flex-start)
+  position: relative;
+  height: 452rem;
+  @include flex(flex-end, flex-start);
 }
 
 .mainImageContainer {
-    position: relative;
-    z-index: 20;
+  position: relative;
+  z-index: 20;
 }
 
 .container {
-    position: relative;
+  position: relative;
 
-    &:not(:first-child) {
-        position: absolute;
-        opacity: 0;
-    }
+  &:not(:first-child) {
+    position: absolute;
+    opacity: 0;
+  }
 }
 
 .onCampusImageContainer {
-    img {
-        width: 389rem;
-        height: auto;
-        margin-top: 24rem;
-        margin-right: 82rem;
-    }
+  img {
+    width: 389rem;
+    height: auto;
+    margin-top: 24rem;
+    margin-right: 82rem;
+  }
 }
 
 .onlineImageContainer {
-    img {
-        width: 352rem;
-        margin-top: -11rem;
-        margin-right: 102rem;
-    }
+  img {
+    width: 352rem;
+    margin-top: -11rem;
+    margin-right: 102rem;
+  }
 
-    .shadow {
-        filter: blur(18.0038rem) hue-rotate(45deg);
-        top: 17rem;
-        left: 10rem;
-    }
+  .shadow {
+    filter: blur(18.0038rem) hue-rotate(45deg);
+    top: 17rem;
+    left: 10rem;
+  }
 }
 
 .distance1ImageContainer {
-    left: calc(-100% - 345rem);
-    top: -70rem;
+  left: calc(-100% - 345rem);
+  top: -70rem;
 
-    img {
-        width: 340rem;
-        margin-top: 12rem;
-        margin-right: 84rem;
-    }
+  img {
+    width: 340rem;
+    margin-top: 12rem;
+    margin-right: 84rem;
+  }
 }
 
 .distance2ImageContainer {
-    position: absolute;
-    right: -60rem;
-    top: -32rem;
+  position: absolute;
+  right: -60rem;
+  top: -32rem;
 
-    img {
-        width: 276rem;
-        margin-top: 16rem;
-        margin-right: 62rem;
-    }
+  img {
+    width: 276rem;
+    margin-top: 16rem;
+    margin-right: 62rem;
+  }
 }
 
 .courses1ImageContainer {
-    top: 122rem;
-    left: -134rem;
-    z-index: 10;
-    position: absolute;
+  top: 122rem;
+  left: -134rem;
+  z-index: 10;
+  position: absolute;
 
-    img {
-        width: 390rem;
-        margin: -120rem 0 0 179rem;
-    }
+  img {
+    width: 390rem;
+    margin: -120rem 0 0 179rem;
+  }
 }
 
 .courses2ImageContainer {
-    position: relative;
+  position: relative;
 
-    img {
-        width: 475.9rem;
-        margin: -98rem -38rem 36rem 159rem;
-    }
+  img {
+    width: 475.9rem;
+    margin: -98rem -38rem 36rem 159rem;
+  }
 }
 
 .main {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 
 .shadow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    filter: blur(17rem);
-    opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: blur(17rem);
+  opacity: 0.3;
+}
+
+@media (max-width: 991px) {
+  .slideImageContainer {
+    margin: 38rem -28rem 0 -20%;
+    z-index: 10;
+    height: 210.7rem;
+  }
+
+  .onCampusImageContainer {
+    img {
+      width: 195.7rem;
+      margin: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75.8rem;
+      display: block;
+      background: linear-gradient(
+          140.24deg,
+          rgba(255, 255, 255, 0) 41.21%,
+          #faf9f4 62.63%
+        )
+        0 0 / 303rem 100% no-repeat;
+      z-index: 30;
+    }
+  }
+
+  .onlineImageContainer {
+    img {
+      width: 184rem;
+      margin: -25rem 25rem 53rem -14rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75.8rem;
+      display: block;
+      background: linear-gradient(
+          140.24deg,
+          rgba(255, 255, 255, 0) 41.21%,
+          #faf9f4 62.63%
+        )
+        0 0 / 303rem 100% no-repeat;
+      z-index: 30;
+    }
+  }
+
+  .distance1ImageContainer {
+    img {
+      width: 154rem;
+      margin: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75.8rem;
+      display: block;
+      background: linear-gradient(
+          140.24deg,
+          rgba(255, 255, 255, 0) 41.21%,
+          #faf9f4 62.63%
+        )
+        0 0 / 303rem 100% no-repeat;
+      z-index: 30;
+    }
+  }
+
+  .distance2ImageContainer {
+    img {
+      width: 129rem;
+      margin: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75.8rem;
+      display: block;
+      background: linear-gradient(
+          140.24deg,
+          rgba(255, 255, 255, 0) 41.21%,
+          #faf9f4 62.63%
+        )
+        0 0 / 303rem 100% no-repeat;
+      z-index: 30;
+    }
+  }
+
+  .courses1ImageContainer {
+    img {
+      width: 184rem;
+      margin: -54rem 6rem 0 0;
+      max-width: inherit;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75.8rem;
+      display: block;
+      background: linear-gradient(
+          140.24deg,
+          rgba(255, 255, 255, 0) 41.21%,
+          #faf9f4 62.63%
+        )
+        0 0 / 303rem 100% no-repeat;
+      z-index: 30;
+    }
+  }
+
+  .courses2ImageContainer {
+    img {
+      width: 169rem;
+      max-width: inherit;
+      margin: -6rem 0 0 -3rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 75.8rem;
+      display: block;
+      background: linear-gradient(
+          140.24deg,
+          rgba(255, 255, 255, 0) 41.21%,
+          #faf9f4 62.63%
+        )
+        0 0 / 303rem 100% no-repeat;
+      z-index: 30;
+    }
+  }
 }

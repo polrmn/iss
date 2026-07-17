@@ -10,6 +10,7 @@ import SearchLIcon from "../icons/SearchLIcon";
 import AuthenticationIcon from "../icons/AuthenticationIcon";
 import ApplyIcon from "../icons/ApplyIcon";
 import MenuButton from "./MenuButton";
+import HeaderMobileMenuBackdrop from "./HeaderMobileMenuBackdrop";
 
 function SearchLink() {
   return (
@@ -115,6 +116,7 @@ export default function Header() {
           </div>
         </div>
         <div className={styles.bottom}>
+          <HeaderMobileMenuBackdrop />
           <nav className={styles.nav}>
             <ul>
               <li>

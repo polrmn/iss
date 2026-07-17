@@ -1,18 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import styles from "./Header.module.scss";
 
 export default function MenuButton() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleClick = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <button
-      className={`${styles.menuBtn} ${isMenuOpen ? styles.menuOpen : ""}`}
-      onClick={handleClick}
+      className={styles.menuBtn}
+      onClick={(e) => e.currentTarget.classList.toggle(styles.menuOpen)}
     >
       <svg
         width="23"
