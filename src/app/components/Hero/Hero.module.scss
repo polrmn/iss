@@ -69,6 +69,10 @@
         0 -2rem 1rem var(--red),
         0 4.44414rem 4.44414rem rgba(0, 0, 0, 0.25);
     }
+
+    .secondary {
+      @include lg-text(var(--lg-blue));
+    }
   }
 
   .subTitle {

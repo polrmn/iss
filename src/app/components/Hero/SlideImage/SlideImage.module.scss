@@ -154,6 +154,9 @@
   }
 
   .distance1ImageContainer {
+    left: calc(-100% - 78rem);
+    top: 11rem;
+
     img {
       width: 154rem;
       margin: 0;
@@ -178,6 +181,9 @@
   }
 
   .distance2ImageContainer {
+    right: 10rem;
+    top: 20rem;
+
     img {
       width: 129rem;
       margin: 0;

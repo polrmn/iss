@@ -2,8 +2,8 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import mainImage1 from "../../../../assets/images/hero-slides/distance/main_1.webp";
 import mainImage2 from "../../../../assets/images/hero-slides/distance/main_2.webp";
-import styles from "./SlideImage.module.scss";
 import DistanceItems from "./ChildItems/Distance";
+import styles from "./SlideImage.module.scss";
 
 export default function Distance({ isActive }: { isActive: boolean }) {
   return (

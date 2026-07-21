@@ -16,12 +16,14 @@ export default function HeroSlides({
 
   const { isMobile } = useWindowSize();
 
+  const distanceSlideTitleTransformDistance = isMobile ? "60rem" : "300rem";
+
   return (
     <div className={styles.slidesContainer}>
       <motion.div
         className={styles.titleContainer}
         animate={{
-          x: isDistance ? "300rem" : 0,
+          x: isDistance ? distanceSlideTitleTransformDistance : 0,
           alignItems: isDistance ? "center" : "flex-start",
         }}
         transition={{ type: "tween", ease: "linear", duration: 0.4 }}
@@ -45,7 +47,13 @@ export default function HeroSlides({
           );
         })}
 
-        <h3 className={styles.subTitle}>
+        <h3
+          className={styles.subTitle}
+          style={{
+            paddingInline: isMobile && isDistance ? "16rem" : undefined,
+            textAlign: isDistance ? "center" : undefined,
+          }}
+        >
           international swiss <span /> school
         </h3>
         <div className={styles.buttonsContainer}>
