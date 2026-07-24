@@ -208,10 +208,14 @@
   }
 
   .courses1ImageContainer {
+    top: -5rem;
+    left: -35rem;
+    z-index: 10;
+
     img {
-      width: 184rem;
-      margin: -54rem 6rem 0 0;
+      width: 169rem;
       max-width: inherit;
+      margin: -6rem 0 0 -3rem;
     }
 
     &::after {
@@ -233,10 +237,11 @@
   }
 
   .courses2ImageContainer {
+    z-index: 20;
     img {
-      width: 169rem;
+      width: 184rem;
+      margin: -54rem 6rem 0 0;
       max-width: inherit;
-      margin: -6rem 0 0 -3rem;
     }
 
     &::after {
@@ -248,7 +253,7 @@
       height: 75.8rem;
       display: block;
       background: linear-gradient(
-          140.24deg,
+          170.24deg,
           rgba(255, 255, 255, 0) 41.21%,
           #faf9f4 62.63%
         )
